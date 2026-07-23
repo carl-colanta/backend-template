@@ -1,18 +1,12 @@
 import Fastify from "fastify";
-import { env } from "./config/index.js";
+import { routes } from "./routes/routes.js";
 
 export function createApp() {
 
-    const app = Fastify({
+        const app = Fastify({
         logger: true
     });
 
-    app.get("/", async () => {
-        return {
-            message: "Response mock"
-        };
-
-    });
-
+    app.register(routes); 
     return app;
 }
