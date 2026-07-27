@@ -3,13 +3,10 @@ import { EnvSchema } from "./env.schema.js";
 
 dotenv.config();
 
-const result =
-    EnvSchema.safeParse(process.env);
+const result = EnvSchema.safeParse(process.env);
 
 if (!result.success) {
-    throw new Error(
-        "Invalid environment"
-    );
+  throw new Error("Invalid environment");
 }
 
 export const env = result.data;
