@@ -1,29 +1,15 @@
 import { z } from "zod";
 
 export const EnvSchema = z.object({
+  NODE_ENV: z
+    .enum(["development", "test", "production"])
+    .default("development"),
 
-    NODE_ENV: z.enum([
-        "development",
-        "test",
-        "production"
-    ]).default("development"),
+  PORT: z.coerce.number().default(3000),
 
-    PORT: z.coerce
-        .number()
-        .default(3000),
+  DATABASE_URL: z.string().min(1),
 
-
-    DATABASE_URL: z.string()
-        .min(1),
-
-    LOG_LEVEL: z.enum([
-        "debug",
-        "info",
-        "warn",
-        "error"
-    ]).default("info")
-
+  LOG_LEVEL: z.enum(["debug", "info", "warn", "error"]).default("info"),
 });
 
-export type Env =
-    z.infer<typeof EnvSchema>;
+export type Env = z.infer<typeof EnvSchema>;

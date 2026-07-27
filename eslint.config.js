@@ -1,8 +1,7 @@
 module.exports = [
-    {
-        rules: {
-            // Add rules here.
-        }
-    }
-];
+  {
+    rules: {
+      // Add rules here.
+    },
+  },
 ];

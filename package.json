@@ -16,5 +16,8 @@
     "@types/node": "^26.1.1",
     "eslint": "^10.7.0",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "screenshot-desktop": "^1.15.4"
   }
 }
