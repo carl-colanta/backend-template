@@ -5,7 +5,7 @@ import type { FastifyInstance } from "fastify";
 import screenshot from "screenshot-desktop";
 
 export async function routes(app: FastifyInstance) {
-  const fileName: String = app.get("/screen", async () => {
+   app.get("/screen", async () => {
     const imgPath: String = "./tmp/demo.png";
     // Initial POC just to see how screenshots work
     screenshot({ filename: imgPath })
