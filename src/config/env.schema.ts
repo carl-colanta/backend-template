@@ -16,11 +16,6 @@ export const EnvSchema = z.object({
     DATABASE_URL: z.string()
         .min(1),
 
-
-    JWT_SECRET: z.string()
-        .min(20),
-
-
     LOG_LEVEL: z.enum([
         "debug",
         "info",

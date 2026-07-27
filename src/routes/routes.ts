@@ -5,17 +5,16 @@ export async function routes(
     app: FastifyInstance
 ) {
 
-    app.get("/", async () => {
+    app.get("/screen", async () => {
         return {
             message: "Hello API"
         };
 
     });
 
-    app.get("/health", async () => {
+    app.get("/windows", async () => {
         return {
             status: "ok"
         };
-
     });
 }
